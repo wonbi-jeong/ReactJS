@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!-- #1. create HTML -->
+<html>
+    <body>
+        <span>Total clicks: 0</span>
+        <!-- #2. grab the button from Javascript -->
+        <button id="btn">Click me</button>
+    </body>
+    <script>
+        let counter = 0; // 데이터가 바뀌더라도 HTML이 새로고침 되지 않기 때문
+        const button = document.getElementById("btn");
+        const span = document.querySelector("span");
+        function handleClick() {
+            // console.log("I have been clicked");
+            // #4. update data
+            counter = counter + 1;
+            // #5. update HTML => 여기까지가 지금까지 해온 방식
+            span.innerText = `Total clicks: ${counter}`;
+        }
+        // #3 set button.addEventListener   
+        button.addEventListener("click", handleClick);
+    </script>    
+</html>
