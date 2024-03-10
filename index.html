@@ -13,10 +13,17 @@
     <script>
         const root = document.getElementById("root")
         // #1. span은 존재하고 생성되었지만 페이지에는 올라오지 않은 상태
-        const span = React.createElement("span", 
-            { id: "sexy-span", style: {color:"red"} },
-            "Hello I'm span");   // " "안에 적는 것은 HTML 태그와 똑같은 이름이어야 함!
+        const h3 = React.createElement("h3", {
+            onMouseEnter: () => console.log("mouse enter")
+        },"Hello I'm span");   // " "안에 적는 것은 HTML 태그와 똑같은 이름이어야 함!
+        const btn = React.createElement("button", {
+            onClick: () => console.log("I'm clicked"),
+            style:{
+                backgroundColor:"tomato"
+            }
+        }, "Click me");    // eventlistener 주기
+        const container = React.createElement("div", null, [h3, btn]);
         // ReactDOM.render(span, span이 가야할 위치)
-        ReactDOM.render(span, root);   //render의 의미는 react element를 가지고 HTML로 만들어 배치한다는 것. 즉, 사용자에게 보여준다는 의미
+        ReactDOM.render(container, root);   //render의 의미는 react element를 가지고 HTML로 만들어 배치한다는 것. 즉, 사용자에게 보여준다는 의미
     </script>    
 </html>
